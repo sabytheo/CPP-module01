@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 14:18:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/07/22 21:40:14 by tsaby            ###   ########.fr       */
+/*   Updated: 2026/01/14 17:02:55 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WEAPON_HPP
 # define WEAPON_HPP
 
-#include <string>
 #include <iostream>
 
 class Weapon

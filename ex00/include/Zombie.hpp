@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 14:18:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/07/22 17:02:37 by tsaby            ###   ########.fr       */
+/*   Updated: 2026/01/14 13:49:27 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ZOMBIE_HPP
 # define ZOMBIE_HPP
 
-#include <string>
 #include <iostream>
 
 class Zombie
@@ -23,10 +22,11 @@ class Zombie
 
 	public:
 			Zombie(void);
-			Zombie(const std::string& name);
 			~Zombie(void);
 
 			void announce(void);
+			void setName(std::string name);
+
 };
 
 Zombie* newZombie(std::string name);

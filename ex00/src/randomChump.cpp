@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 14:30:08 by tsaby             #+#    #+#             */
-/*   Updated: 2025/07/22 17:03:04 by tsaby            ###   ########.fr       */
+/*   Created: 2025/07/22 15:05:18 by tsaby             #+#    #+#             */
+/*   Updated: 2026/01/09 10:25:35 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main(void)
+void randomChump(std::string name)
 {
-	Zombie *nZombie  = newZombie("Maxime");
-	nZombie->announce();
-	randomChump("Ramdom");
-	delete nZombie;
-	return(0);
+	Zombie zombie = Zombie();
+	zombie.setName(name);
+	zombie.announce();
 }

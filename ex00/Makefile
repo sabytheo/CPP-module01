@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+         #
+#    By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/23 17:03:26 by tsaby             #+#    #+#              #
-#    Updated: 2025/07/22 15:09:14 by tsaby            ###   ########.fr        #
+#    Updated: 2026/01/14 14:06:47 by tsaby            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS		:=	Zombie.cpp \
 
 #*------------------------------------------------------------------------------*
 
-SRCS_D		:=	sources/
+SRCS_D		:=	src/
 
 OBJS_D		:=	objs/
 
@@ -37,15 +37,15 @@ HEAD		:=	include/Zombie.hpp
 
 HEAD_D		:=	.
 
-CC 			:= c++
+CXX 			:= c++
 
 #*------------------------------------------------------------------------------*
 
-CFLAGS		:=	-Wall -Wextra -Werror -std=c++98 -g3
+CXXFLAGS		:=	-Wall -Wextra -Werror -std=c++98 -g3 -MMD -MP
 
 #*------------------------------------------------------------------------------*
 
-NAME		:=	Zombie
+NAME		:=	Brainz
 
 #*------------------------------------------------------------------------------*
 
@@ -55,14 +55,14 @@ all			:
 
 #*------------------------------------------------------------------------------*
 
-$(NAME)		:	$(OBJS_D) $(OBJS) $(HEAD)
-				@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+$(NAME)		:	$(OBJS_D) $(OBJS)
+				@$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 				@echo "$(YELLOW)$(NAME) successfully built!$(NC)"
 
 
-$(OBJS)		:	$(OBJS_D)%.o: $(SRCS_D)%.cpp $(HEAD)
+$(OBJS)		:	$(OBJS_D)%.o: $(SRCS_D)%.cpp $ | $(OBJS_D)
 				@echo "$(YELLOW)Compiling $<,...$(NC)"
-				@$(CC) $(CFLAGS) -Iinclude -c $< -o $@
+				@$(CXX) $(CXXFLAGS) -Iinclude -c $< -o $@
 
 
 $(OBJS_D)	:
@@ -79,5 +79,7 @@ fclean		:	clean
 				@echo "$(YELLOW)Full clean complete$(NC)"
 
 re			:	fclean all
+
+-include $(OBJS:.o=.d)
 
 .PHONY: all  clean fclean re

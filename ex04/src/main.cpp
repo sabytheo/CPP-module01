@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 14:30:08 by tsaby             #+#    #+#             */
-/*   Updated: 2025/07/29 12:13:12 by tsaby            ###   ########.fr       */
+/*   Updated: 2026/01/14 17:34:05 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int main(int argc, char ** argv)
 	if(infile.fail())
 	{
 		std::cout << "Error with open File" << std::endl;
+		return (1);
 	}
 	outfile_name = filename + ".replace";
 	std::ofstream outfile(outfile_name.c_str());
@@ -49,7 +50,6 @@ int main(int argc, char ** argv)
 	}
 
 	std::string line;
-
 
 	while (std::getline(infile,line))
 	{
@@ -63,10 +63,8 @@ int main(int argc, char ** argv)
 			last_pos = pos + s1.length();
 		}
 		result += line.substr(last_pos);
-		outfile << result << '\n';
+		outfile << result << std::endl;
 	}
-	// return(replace(infile, s1, s2,outfile));
 	return (0);
-
 }
 

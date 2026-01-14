@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 17:10:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/07/22 18:07:30 by tsaby            ###   ########.fr       */
+/*   Created: 2025/07/22 14:30:08 by tsaby             #+#    #+#             */
+/*   Updated: 2026/01/14 14:05:58 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie* zombieHorde( int N, std::string name )
+int main(void)
 {
-	if (N <= 0)
-		return (NULL);
-	Zombie *zombies = new Zombie[N];
+
+	int N = 4;
+	Zombie *hordeZombie = zombieHorde(N, "Maxime");
+	if (!hordeZombie)
+	{
+		std::cout << "N must be positive" << std::endl;
+		return (1);
+	}
 	for (int i = 0; i < N; i++)
 	{
-		zombies[i] = Zombie(name);
+		std::cout << "Index" << i << ": ";
+		hordeZombie[i].announce();
 	}
-	return (zombies);
+	delete[] hordeZombie;
+	return (0);
 }

@@ -3,29 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/22 18:18:30 by tsaby             #+#    #+#             */
-/*   Updated: 2025/07/22 18:40:26 by tsaby            ###   ########.fr       */
+/*   Created: 2025/07/22 14:30:08 by tsaby             #+#    #+#             */
+/*   Updated: 2026/01/14 14:01:50 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
-#include <iostream>
+#include "Zombie.hpp"
 
 int main(void)
 {
-	std::string str = "HI THIS IS BRAIN";
-	std::string *stringPTR = &str;
-	std::string& stringREF = str;
-
-	std::cout << &str << std::endl;
-	std::cout << stringPTR << std::endl;
-	std::cout << &stringREF << std::endl;
-
-	std::cout << str << std::endl;
-	std::cout << *stringPTR << std::endl;
-	std::cout << stringREF << std::endl;
-
-	return 0;
+	Zombie *nZombie  = newZombie("Maxime");
+	nZombie->announce();
+	randomChump("Ramdom");
+	delete nZombie;
+	return(0);
 }
