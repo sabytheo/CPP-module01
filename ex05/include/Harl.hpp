@@ -3,17 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tsaby <tsaby@student.42lyon.fr>            +#+  +:+       +#+        */
+/*   By: tsaby <tsaby@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 14:18:42 by tsaby             #+#    #+#             */
-/*   Updated: 2025/07/29 13:19:23 by tsaby            ###   ########.fr       */
+/*   Updated: 2026/01/14 17:58:23 by tsaby            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HARL_HPP
 # define HARL_HPP
 
-#include <string>
 #include <iostream>
 
 class Harl
